@@ -1,0 +1,49 @@
+product,date,time,total_slots,taken_slots,date_booked,amount_paid
+Limassol Wine Festival,2024-09-28,18:00,50,20,2024-08-18,200
+Limassol Wine Festival,2024-09-29,18:00,50,25,2024-08-19,250
+Ayia Napa International Music Festival,2024-08-18,16:00,50,40,2024-08-16,1200
+Paphos Aphrodite Festival,2024-07-29,20:00,50,30,2024-08-16,600
+Troodos Mountain Bike Challenge,2024-06-20,10:00,50,25,2024-08-20,625
+Troodos Mountain Bike Challenge,2024-06-21,14:00,50,20,2024-08-21,500
+Paphos Beer Festival,2024-09-03,18:00,50,15,2024-08-17,150
+Paphos Beer Festival,2024-09-04,18:00,50,10,2024-08-18,100
+Jeep Safari in the Akamas Peninsula,2024-08-20,10:00,10,5,2024-08-18,250
+Jeep Safari in the Akamas Peninsula,2024-08-22,10:00,10,8,2024-08-19,400
+Troodos Mountains & Kykkos Monastery,2024-08-21,10:00,20,15,2024-08-17,750
+Scuba Diving in Zenobia Wreck (Larnaca),2024-08-20,09:00,5,3,2024-08-19,180
+Scuba Diving in Zenobia Wreck (Larnaca),2024-08-20,09:00,5,1,2024-08-19,60
+Scuba Diving in Zenobia Wreck (Larnaca),2024-08-20,09:00,5,1,2024-08-19,60
+Scuba Diving in Zenobia Wreck (Larnaca),2024-08-22,12:00,5,2,2024-08-18,120
+Scuba Diving in Zenobia Wreck (Larnaca),2024-08-22,12:00,5,2,2024-08-18,120
+Scuba Diving in Zenobia Wreck (Larnaca),2024-08-22,12:00,5,1,2024-08-18,60
+Omodos Winery Excursion,2024-08-21,10:00,10,7,2024-08-17,350
+Cape Greco & Sea Caves Adventure Boat Trip,2024-08-20,10:00,50,20,2024-08-18,1400
+Sea Caves & Blue Lagoon Boat Trip,2024-08-22,14:00,25,15,2024-08-19,1050
+"Ancient Kingdoms Tour (Paphos, Kourion, Amathus)",2024-08-21,10:00,10,5,2024-08-17,250
+"Village & Vineyard Tour (Lefkara, Omodos, Platres)",2024-08-22,10:00,20,10,2024-08-19,600
+Venetian Bridges Safari,2024-08-23,09:00,10,7,2024-08-20,490
+Nicosia City Tour,2024-08-22,10:00,10,5,2024-08-18,250
+Aphrodite’s Route (Paphos),2024-08-23,10:00,50,25,2024-08-20,1750
+Waterfalls of Troodos Tour,2024-08-21,10:00,25,15,2024-08-19,900
+Limassol Wine Festival,2024-09-30,18:00,50,10,2024-08-21,100
+Ayia Napa International Music Festival,2024-08-18,16:00,50,30,2024-08-16,900
+Paphos Aphrodite Festival,2024-07-29,20:00,50,25,2024-08-18,500
+Troodos Mountain Bike Challenge,2024-06-22,10:00,50,30,2024-08-20,750
+Paphos Beer Festival,2024-09-05,18:00,50,20,2024-08-19,200
+Jeep Safari in the Akamas Peninsula,2024-08-21,10:00,10,4,2024-08-19,200
+Troodos Mountains & Kykkos Monastery,2024-08-23,10:00,20,12,2024-08-20,480
+Scuba Diving in Zenobia Wreck (Larnaca),2024-08-21,12:00,5,4,2024-08-17,144
+Omodos Winery Excursion,2024-08-22,10:00,10,5,2024-08-20,175
+Cape Greco & Sea Caves Adventure Boat Trip,2024-08-21,10:00,50,25,2024-08-19,875
+Cape Greco & Sea Caves Adventure Boat Trip,2024-08-21,10:00,50,5,2024-08-19,175
+Cape Greco & Sea Caves Adventure Boat Trip,2024-08-21,10:00,50,5,2024-08-19,175
+Cape Greco & Sea Caves Adventure Boat Trip,2024-08-21,10:00,50,5,2024-08-19,175
+Cape Greco & Sea Caves Adventure Boat Trip,2024-08-21,10:00,50,5,2024-08-19,175
+Sea Caves & Blue Lagoon Boat Trip,2024-08-23,10:00,25,18,2024-08-20,1260
+Sea Caves & Blue Lagoon Boat Trip,2024-08-23,10:00,25,7,2024-08-20,490
+"Ancient Kingdoms Tour (Paphos, Kourion, Amathus)",2024-08-20,10:00,10,7,2024-08-18,350
+"Village & Vineyard Tour (Lefkara, Omodos, Platres)",2024-08-23,10:00,20,12,2024-08-20,720
+Venetian Bridges Safari,2024-08-22,09:00,10,6,2024-08-18,420
+Nicosia City Tour,2024-08-21,10:00,10,8,2024-08-17,400
+Aphrodite’s Route (Paphos),2024-08-22,10:00,50,30,2024-08-19,2100
+Waterfalls of Troodos Tour,2024-08-22,10:00,25,12,2024-08-19,600

@@ -1,0 +1,11 @@
+pycparser==2.21
+matplotlib==3.8.0
+numpy==1.26.1
+pandas==2.1.1
+scipy==1.11.3
+seaborn==0.13.2
+SQLAlchemy==2.0.32
+streamlit==1.37.1
+streamlit-navigation-bar==3.3.0
+trycourier==6.1.0
+boto3==1.28.55
