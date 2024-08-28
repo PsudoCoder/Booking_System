@@ -176,10 +176,8 @@ def handle_booking(user_name, user_email, activity_selected, date_selected_str, 
         )
 
     except OperationalError as e:
-        session.rollback()
         st.error(f"Database error: {e}")
     except Exception as e:
-        session.rollback()
         st.error(f"Failed to handle booking: {e}")
     finally:
         session.close()
@@ -254,13 +252,11 @@ def show_booking():
 
         if activity_type == 'Event':
             # Handle event-specific date selection
-            date_selected = st.date_input("Select a date *", min_value=min(available_dates),
-                                          max_value=max(available_dates))
+            date_selected = st.date_input("Select a date *", min_value=min(available_dates))
         else:
             # Show the calendar widget with only the available days
             available_dates = [next_available_date(day) for day in available_days]
-            date_selected = st.date_input("Select a date *", min_value=min(available_dates),
-                                          max_value=max(available_dates))
+            date_selected = st.date_input("Select a date *", min_value=min(available_dates))
 
         date_selected_str = date_selected.strftime('%Y-%m-%d')
 

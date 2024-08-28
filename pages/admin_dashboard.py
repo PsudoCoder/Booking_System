@@ -137,7 +137,6 @@ def create_product():
                     description=description,
                     price_per_person=price_per_person,
                     available_times=available_times,
-                    available_days=available_days,
                     spots_per_time_slot=spots_per_time_slot,
                     included_food=included_food,
                     available_dates=available_dates
@@ -151,7 +150,6 @@ def create_product():
                     available_days=available_days,
                     spots_per_time_slot=spots_per_time_slot,
                     included_food=included_food,
-                    available_dates=available_dates
                 )
             elif product_type == 'Excursion':
                 new_product = Excursion(
@@ -162,7 +160,6 @@ def create_product():
                     available_days=available_days,
                     spots_per_time_slot=spots_per_time_slot,
                     included_food=included_food,
-                    available_dates=available_dates
                 )
 
             session.add(new_product)
