@@ -8,6 +8,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from database_setup import Tour, Excursion, Event, Booking
 import pandas as pd
 import boto3
+import re
 
 # Create an engine and session
 engine = create_engine('sqlite:///island_breeze.db', pool_size=5, max_overflow=10)
