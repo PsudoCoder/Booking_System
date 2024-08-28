@@ -201,8 +201,8 @@ def show_booking():
     """Display the booking form."""
     st.header("Book Now")
 
-    user_name = st.text_input("Enter your name")
-    user_email = st.text_input("Enter your email")
+    user_name = st.text_input("Enter your name *")
+    user_email = st.text_input("Enter your email *")
 
     # Load data
     tours, excursions, events, bookings = load_data()
@@ -217,13 +217,13 @@ def show_booking():
     combined_df = pd.DataFrame(combined_list, columns=['product', 'type'])
 
     # Dropdown to select the activity type (Tour, Excursion, or Event)
-    activity_type = st.selectbox("Choose an activity type", combined_df['type'].unique())
+    activity_type = st.selectbox("Choose an activity type *", combined_df['type'].unique())
 
     # Filter the combined DataFrame based on the selected activity type
     activity_df = combined_df[combined_df['type'] == activity_type]
 
     # Dropdown to select the activity
-    activity_selected = st.selectbox("Choose an activity", activity_df['product'].unique())
+    activity_selected = st.selectbox("Choose an activity *", activity_df['product'].unique())
 
     # Get the details for the selected activity
     if activity_type == 'Tour':
@@ -254,12 +254,12 @@ def show_booking():
 
         if activity_type == 'Event':
             # Handle event-specific date selection
-            date_selected = st.date_input("Select a date", min_value=min(available_dates),
+            date_selected = st.date_input("Select a date *", min_value=min(available_dates),
                                           max_value=max(available_dates))
         else:
             # Show the calendar widget with only the available days
             available_dates = [next_available_date(day) for day in available_days]
-            date_selected = st.date_input("Select a date", min_value=min(available_dates),
+            date_selected = st.date_input("Select a date *", min_value=min(available_dates),
                                           max_value=max(available_dates))
 
         date_selected_str = date_selected.strftime('%Y-%m-%d')
@@ -272,9 +272,9 @@ def show_booking():
                 available_times_filtered = [time for time in available_times if
                                             check_availability(activity_selected, date_selected_str,
                                                                time, total_slots) > 0]
-                time_selected = st.selectbox("Choose a time", available_times_filtered)
+                time_selected = st.selectbox("Choose a time *", available_times_filtered)
 
-                num_people = st.number_input("Number of people", min_value=1, max_value=50, value=1)
+                num_people = st.number_input("Number of people *", min_value=1, max_value=50, value=1)
                 total_price = num_people * price_per_person
                 st.write(f"**Total Price:** €{total_price}")
 
@@ -289,12 +289,12 @@ def show_booking():
                 available_times_filtered = [time for time in available_times if
                                             check_availability(activity_selected, date_selected_str,
                                                                time, total_slots) > 0]
-                time_selected = st.selectbox("Choose a time", available_times_filtered)
+                time_selected = st.selectbox("Choose a time *", available_times_filtered)
 
                 # Calculate available slots
                 available_slots = check_availability(activity_selected, date_selected_str, time_selected,
                                                      total_slots)
-                num_people = st.number_input(f"Number of people ( {available_slots} spots available )", min_value=1, max_value=available_slots, value=1)
+                num_people = st.number_input(f"Number of people * ( {available_slots} spots available )", min_value=1, max_value=available_slots, value=1)
                 total_price = num_people * price_per_person
                 st.write(f"**Total Price:** €{total_price}")
 

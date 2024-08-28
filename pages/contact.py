@@ -15,11 +15,11 @@ def show_contact():
     # Contact form
     with st.form("contact_form"):
         # Full Name
-        full_name = st.text_input("Full Name")
+        full_name = st.text_input("Full Name *")
 
-        email = st.text_input("Email Address")
-        subject = st.text_input("Subject")
-        message = st.text_area("Message")
+        email = st.text_input("Email Address *")
+        subject = st.text_input("Subject *")
+        message = st.text_area("Message *")
         submit_button = st.form_submit_button(label="Send Message")
 
         # Form submission handling
