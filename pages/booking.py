@@ -301,9 +301,13 @@ def show_booking():
                     st.error("Please fill out all fields.")
                 else:
                     if st.button("Confirm Booking"):
-                        payment(user_name, user_email, activity_selected, date_selected_str,
-                                time_selected,
-                                num_people, total_price, total_slots)
+                        email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+                        if not re.match(email_regex, user_email):
+                            st.error("Invalid email address. Please enter a valid email.")
+                        else:
+                            payment(user_name, user_email, activity_selected, date_selected_str,
+                                    time_selected,
+                                    num_people, total_price, total_slots)
 
 
 if __name__ == "__main__":
