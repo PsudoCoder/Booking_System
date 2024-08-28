@@ -18,14 +18,10 @@ def delete_booking():
     booking_id = st.number_input("Enter Booking ID to Cancel", min_value=1, step=1)
     booking = session.query(Booking).filter(Booking.id == booking_id).first()
     if booking:
-        confirm = st.button("Confirm")
-        if confirm:
-            confirm_check = st.checkbox(
-                f"Are you sure you want to delete booking with ID {booking_id}'? This action cannot be undone.")
-            if confirm_check:
-                session.delete(booking)
-                session.commit()
-                st.success(f"Booking ID {booking_id} for {booking.product} has been cancelled.")
+        if st.button("Confirm"):
+            session.delete(booking)
+            session.commit()
+            st.success(f"Booking ID {booking_id} for {booking.product} has been cancelled.")
     else:
        st.warning("Please enter a valid Booking ID.")
 
@@ -193,13 +189,9 @@ def delete_product():
 
             # Confirm deletion
             if st.button(f"Delete {product_type} '{product_name}'"):
-                confirm = st.checkbox(
-                    f"Are you sure you want to delete {product_type} '{product_name}'? This action cannot be undone.")
-                if confirm:
-                    # Delete the product from the database
-                    session.delete(product_instance)
-                    session.commit()
-                    st.success(f"{product_type} '{product_name}' has been deleted successfully.")
+                session.delete(product_instance)
+                session.commit()
+                st.success(f"{product_type} '{product_name}' has been deleted successfully.")
 
 @st.dialog("Edit Booking")
 def edit_booking():
