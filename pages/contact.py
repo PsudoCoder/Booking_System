@@ -1,6 +1,7 @@
 import streamlit as st
 from courier.client import Courier
 import boto3
+import re
 
 
 def show_contact():
@@ -25,33 +26,36 @@ def show_contact():
         if submit_button:
             if not full_name or not email or not message:
                 st.error("Please fill out all required fields: Name, Email and Message.")
-
             else:
-                ssm = boto3.client('ssm',
-                                   region_name="us-east-1",
-                                   aws_access_key_id=st.secrets["aws_key"],
-                                   aws_secret_access_key=st.secrets["aws_secret"]
-                                   )
-                auth_token = ssm.get_parameter(Name='/prod/courier_token', WithDecryption=True)
-                template_id = ssm.get_parameter(Name='/prod/courier_contact_template', WithDecryption=True)
+                email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+                if not re.match(email_regex, email):
+                    st.error("Invalid email address. Please enter a valid email.")
+                else:
+                    ssm = boto3.client('ssm',
+                                       region_name="us-east-1",
+                                       aws_access_key_id=st.secrets["aws_key"],
+                                       aws_secret_access_key=st.secrets["aws_secret"]
+                                       )
+                    auth_token = ssm.get_parameter(Name='/prod/courier_token', WithDecryption=True)
+                    template_id = ssm.get_parameter(Name='/prod/courier_contact_template', WithDecryption=True)
 
-                client = Courier(authorization_token=auth_token['Parameter']['Value'])
+                    client = Courier(authorization_token=auth_token['Parameter']['Value'])
 
-                client.send(
-                    message={
-                        "to": {
-                            "email": "islandbreezeagency@gmail.com",
-                        },
-                        "template": template_id['Parameter']['Value'],
-                        "data": {
-                            "name": full_name,
-                            "topic": subject,
-                            "message": message,
-                            "email": email
+                    client.send(
+                        message={
+                            "to": {
+                                "email": "islandbreezeagency@gmail.com",
+                            },
+                            "template": template_id['Parameter']['Value'],
+                            "data": {
+                                "name": full_name,
+                                "topic": subject,
+                                "message": message,
+                                "email": email
+                            }
                         }
-                    }
-                )
-                st.success(f"Thank you, {full_name}! Your message has been sent.")
+                    )
+                    st.success(f"Thank you, {full_name}! Your message has been sent.")
 
 
 
