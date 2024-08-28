@@ -200,8 +200,6 @@ def delete_product():
                     session.delete(product_instance)
                     session.commit()
                     st.success(f"{product_type} '{product_name}' has been deleted successfully.")
-                else:
-                    st.warning(f"Deletion of {product_type} '{product_name}' has been cancelled.")
 
 @st.dialog("Edit Booking")
 def edit_booking():
