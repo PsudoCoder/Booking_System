@@ -119,10 +119,12 @@ def create_product():
         description = st.text_area("Description")
         price_per_person = st.number_input("Price Per Person", format="%0.2f")
         available_times = st.text_input("Available Times")
-        available_days = st.text_input("Available Days")
+        if product_type != "Event":
+            available_days = st.text_input("Available Days")
         spots_per_time_slot = st.number_input("Spots Per Time Slot")
         included_food = st.selectbox("Included Food", ['Yes', 'No'])
-        available_dates = st.text_input("Available Dates")
+        if product_type == "Event":
+            available_dates = st.text_input("Available Dates")
 
         # Save new product
         save_button = st.form_submit_button("Create Product")

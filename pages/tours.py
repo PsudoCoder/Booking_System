@@ -32,7 +32,7 @@ def show_tours():
         col1, col2 = st.columns([1, 2])
         with col1:
             # Use the product name to find the corresponding image file
-            image_name = image_map.get(tour.product, "default_tour.jpg")
+            image_name = image_map.get(tour.product, "tour1.jpg")
             image_path = f"images/{image_name}"
             st.image(image_path, use_column_width=True)
         with col2:
