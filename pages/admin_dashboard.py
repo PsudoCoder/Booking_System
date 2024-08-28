@@ -20,9 +20,12 @@ def delete_booking():
     if booking:
         confirm = st.button("Confirm")
         if confirm:
-            session.delete(booking)
-            session.commit()
-            st.success(f"Booking ID {booking_id} for {booking.product} has been cancelled.")
+            confirm_check = st.checkbox(
+                f"Are you sure you want to delete booking with ID {booking_id}'? This action cannot be undone.")
+            if confirm_check:
+                session.delete(booking)
+                session.commit()
+                st.success(f"Booking ID {booking_id} for {booking.product} has been cancelled.")
     else:
        st.warning("Please enter a valid Booking ID.")
 
